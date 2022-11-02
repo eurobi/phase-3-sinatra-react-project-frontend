@@ -1,21 +1,19 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import NewUserForm from "./NewUserForm";
+import ExistingUserForm from "./ExistingUserForm";
 
 
-function LogIn({ user }){
+function LogIn({ setUser }){
+    const [newUser, changeExistingUser] = useState(true)
+    function handleClick(){
+        changeExistingUser(!newUser)
+    }
     return(
         <div>
-            <form>
-                <label for="first-name-field">First Name</label>
-                    <input id="first-name-field" className="user-form-input"></input>
-                <label for="last-name-field">Last Name</label>
-                    <input id="last-name-field" className="user-form-input"></input>
-                <label for="username-field">UserName</label>
-                    <input id="username-field" className="user-form-input"></input>
-                <label for="password-field">Password</label>
-                    <input id="password-field" className="user-form-input"></input>
-                <label for="img-field">Profile Image</label>
-                    <input id="img-field" className="user-form-input"></input>
-            </form>
+            {newUser? <h1>Sign-up</h1> : <h1>Log in</h1>}
+            {newUser? <NewUserForm setUser={setUser}/> : <ExistingUserForm setUser={setUser}/>}
+            <button onClick={handleClick}>{newUser? "Already have an account? Sign in" : "Click to Sign Up"}</button>
         </div>
     )
 }
