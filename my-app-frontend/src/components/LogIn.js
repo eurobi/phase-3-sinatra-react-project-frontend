@@ -5,7 +5,7 @@ import ExistingUserForm from "./ExistingUserForm";
 
 
 function LogIn({ setUser }){
-    const [newUser, changeExistingUser] = useState(true)
+    const [newUser, changeExistingUser] = useState(false)
     function handleClick(){
         changeExistingUser(!newUser)
     }

@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 function NewUserForm({setUser}){
+    const history = useNavigate()
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -31,6 +33,7 @@ function NewUserForm({setUser}){
         .then(newUser => {
             setUserNames([...userNames, newUser.user_name])
             setUser(newUser)
+            history('/')
         }) 
     } 
 
