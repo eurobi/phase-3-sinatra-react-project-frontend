@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar'
 import LogIn from './components/LogIn'
-import PostList from './components/PostList';
+import Home from './components/Home';
 import { useEffect, useState } from 'react';
 import { Routes, Route, useHistory } from "react-router-dom";
 
@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser} user={user}/>
         <Routes>
-          <Route path='/' element={<PostList posts={posts}/>}/>
+          <Route path='/' element={<Home posts={posts} user={user}/>}/>
           <Route path='/login' element={user === null? <LogIn setUser={setUser}/> : <></>}/>
         </Routes>
     </div>
