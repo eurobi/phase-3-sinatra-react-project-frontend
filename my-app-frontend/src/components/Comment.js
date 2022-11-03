@@ -1,8 +1,8 @@
 import React from "react";
 
-function Comment(){
+function Comment({comment}){
     return(
-        <p>comment</p>
+        <p>{comment.content}</p>
     )
 }
 

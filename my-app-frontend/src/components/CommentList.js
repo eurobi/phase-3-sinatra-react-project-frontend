@@ -1,12 +1,11 @@
 import React from "react";
 import Comment from "./Comment";
 
-function CommentList(){
+function CommentList({comments}){
+    const commentElements = comments.map(comment => <Comment key={comment.created_at} comment={comment}/>)
     return(
         <>
-            <Comment/>
-            <Comment/>
-            <Comment/>
+            {commentElements}
         </>
     )
 }
