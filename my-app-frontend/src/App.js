@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser} user={user}/>
         <Routes>
-          <Route path='/' element={<Home posts={posts} user={user}/>}/>
+          <Route path='/' element={<Home posts={posts} setPosts={setPosts} user={user}/>}/>
           <Route path='/login' element={user === null? <LogIn setUser={setUser}/> : <></>}/>
         </Routes>
     </div>
