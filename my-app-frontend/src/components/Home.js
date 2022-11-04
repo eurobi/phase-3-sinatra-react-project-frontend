@@ -12,7 +12,7 @@ function Home({setPosts, posts, user}){
             {writingPost? <PostForm posts={posts} setPosts={setPosts} user={user}></PostForm> : <></>}
             {user!== null? <button onClick={handleClick}>{writingPost? "Cancel" : "Create Post"}</button> : null}
 
-            <PostList posts={posts}/>
+            <PostList user={user} posts={posts}/>
         </div>
     )
 }
