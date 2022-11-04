@@ -15,7 +15,7 @@ function PostForm({ user, setPosts, posts }){
             })
         })
         .then(r => r.json())
-        .then(post => setPosts([...posts, post]))
+        .then(post => setPosts([post, ...posts]))
 
     }
     return(

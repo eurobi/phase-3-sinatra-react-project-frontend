@@ -1,8 +1,8 @@
 import React from "react";
 import Post from "./Post";
 
-function PostList({ posts, user }){
-    const postElements = posts.map((post => <Post key={post.created_at} post={post} user={user} />))
+function PostList({ setPosts, posts, user }){
+    const postElements = posts.map((post => <Post posts={posts} setPosts={setPosts} key={post.created_at} post={post} user={user} />))
     return(
         <div>
             {postElements}
