@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-function CommentForm(){
+function CommentForm({user, post}){
+    const [comment, setComment] = useState("")
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log(comment)
+    }
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <label for='comment-field'>Comment: </label>
-            <input id='comment-field'></input>
+            <input onChange={(e) => setComment(e.target.value)} value={comment} id='comment-field'></input>
             <input type='submit'></input>
         </form>
     )

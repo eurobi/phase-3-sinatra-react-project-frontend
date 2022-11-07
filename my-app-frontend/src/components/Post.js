@@ -48,7 +48,7 @@ function Post({setPosts, post, posts, user}){
             {user !== null && user.user_name === post.user.user_name && editing === false? <button onClick={handleEdit}>Edit Post</button> : null}
             {editing === true? <button onClick={handleEditSubmit}>Submit Edit</button> : null}
             <CommentList comments={post.comments}/> 
-            {user !== null? <CommentForm></CommentForm> : null}
+            {user !== null? <CommentForm user={user} post={post}></CommentForm> : null}
         </>
     )
 }
