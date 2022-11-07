@@ -15,9 +15,13 @@ function PostForm({ user, setPosts, posts }){
             })
         })
         .then(r => r.json())
-        .then(post => setPosts([post, ...posts]))
+        .then(post => {
+            setPosts([post, ...posts])
+            setContent('')
+        })
 
     }
+
     return(
     <form onSubmit={handleSubmit}>
         <label for='post-content-field'></label>

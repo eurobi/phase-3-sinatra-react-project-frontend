@@ -28,6 +28,7 @@ function CommentForm({user, post, setPosts, posts}){
                 }
             })
             setPosts(mappedPosts)
+            setComment('')
         })
     }
     return(

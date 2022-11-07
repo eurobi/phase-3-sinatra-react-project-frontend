@@ -34,7 +34,7 @@ function Post({setPosts, post, posts, user}){
         .then(r => r.json())
         .then(updatedPost => {
             const newPosts = [...posts].filter((post) => post.id !== updatedPost.id)
-            const sortedPosts = [updatedPost, ...newPosts].sort((a,b) => a.id > b.id)
+            const sortedPosts = [updatedPost, ...newPosts].sort((a,b) => b.id - a.id)
             setPosts(sortedPosts)
             setEditing(false)
         })
@@ -47,7 +47,7 @@ function Post({setPosts, post, posts, user}){
             {user !== null && user.user_name === post.user.user_name && editing === false? <button onClick={handleDelete}>Delete Post</button> : null}
             {user !== null && user.user_name === post.user.user_name && editing === false? <button onClick={handleEdit}>Edit Post</button> : null}
             {editing === true? <button onClick={handleEditSubmit}>Submit Edit</button> : null}
-            <CommentList comments={post.comments}/> 
+            <CommentList posts={posts} setPosts={setPosts} user={user} comments={post.comments}/> 
             {user !== null? <CommentForm posts={posts} setPosts={setPosts} user={user} post={post}></CommentForm> : null}
         </>
     )
