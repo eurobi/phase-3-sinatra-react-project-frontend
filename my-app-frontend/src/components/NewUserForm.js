@@ -44,8 +44,8 @@ function NewUserForm({setUser}){
     },[])
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="form-container">
+            <form className="user-form" onSubmit={handleSubmit}>
                 <label for="first-name-field">First Name</label>
                     <input value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} id="first-name-field" className="user-form-input"></input>
                 <label for="last-name-field">Last Name</label>
@@ -56,7 +56,7 @@ function NewUserForm({setUser}){
                     <input value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} id="password-field" className="user-form-input"></input>
                 <label for="img-field">Profile Image</label>
                     <input value={formData.profileImg} onChange={(e) => setFormData({...formData, profileImg: e.target.value})} id="img-field" className="user-form-input"></input>
-                <input type='submit'></input>
+                <input className="post-edit-button" type='submit'></input>
             </form>
         </div>
     )

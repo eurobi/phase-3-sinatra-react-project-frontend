@@ -25,8 +25,8 @@ function PostForm({ user, setPosts, posts }){
     return(
     <form className="post-form" onSubmit={handleSubmit}>
         <label for='post-content-field'></label>
-        <input onChange={(e) => setContent(e.target.value)} id='post-content-field' value={content}></input>
-        <input className="post-edit-button" type='submit'></input>
+        <input className="post-input" onChange={(e) => setContent(e.target.value)} id='post-content-field' value={content}></input>
+        <input className="post-submit-button" type='submit'></input>
     </form>
     )
 

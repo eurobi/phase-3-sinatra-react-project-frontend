@@ -32,13 +32,13 @@ function ExistingUserForm({setUser}){
 
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="form-container">
+            <form className="user-form" onSubmit={handleSubmit}>
                 <label for="username-field">UserName</label>
                     <input value={formData.userName} onChange={(e) => setFormData({...formData, userName: e.target.value})} id="username-field" className="user-form-input"></input>
                 <label for="password-field">Password</label>
                     <input value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} id="password-field" className="user-form-input"></input>
-                <input type='submit'></input>
+                <input className="post-edit-button" type='submit'></input>
             </form>
         </div>
     )

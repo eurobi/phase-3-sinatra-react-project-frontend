@@ -108,4 +108,38 @@
   height: 30px;
 }
 
+.user-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container{
+  background-color: rgb(187, 186, 186);
+  width: 200px;
+  margin: auto;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.user-form-input{
+  border-style: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.post-input{
+  width: 500px;
+  height: 100px;
+}
+
+.post-submit-button{
+  height: 50px;
+  border-style: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: rgb(99, 201, 99);
+}
+
 
