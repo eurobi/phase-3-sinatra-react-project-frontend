@@ -24,10 +24,10 @@ function Comment({posts, setPosts, user, comment}){
         })
     }
     return(
-        <>
+        <div className="comment">
             <p>{comment.user.user_name}: {comment.content}</p>
             {user!== null && user.id === comment.user.id? <button onClick={handleDelete}>Delete Comment</button> : null}
-        </>
+        </div>
         
     )
 }

@@ -7,11 +7,11 @@ function NavBar({setUser, user}){
         setUser(null)
     }
     return(
-        <>
+        <div className="nav">
             {user !== null? <NavLink onClick={handleClick} className='navItem' to='/login'>Log out</NavLink> :<NavLink className='navItem' to='/login'>Log in</NavLink>}
             <NavLink className='navItem' to='/'>Home</NavLink>
             <NavLink className='navItem' to='/me'>{user? user.user_name : <></>}</NavLink>
-        </>
+        </div>
     )
 }
 

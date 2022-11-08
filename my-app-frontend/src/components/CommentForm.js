@@ -32,10 +32,10 @@ function CommentForm({user, post, setPosts, posts}){
         })
     }
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="comment-form" onSubmit={handleSubmit}>
             <label for='comment-field'>Comment: </label>
             <input onChange={(e) => setComment(e.target.value)} value={comment} id='comment-field'></input>
-            <input type='submit'></input>
+            <input className="post-edit-button" type='submit'></input>
         </form>
     )
 
