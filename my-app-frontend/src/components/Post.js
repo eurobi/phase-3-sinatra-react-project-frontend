@@ -39,11 +39,18 @@ function Post({setPosts, post, posts, user}){
             setEditing(false)
         })
     }
+    function handleTime(stamp){
+        const year = stamp.slice(0, 4)
+        const month = stamp.slice(5,7)
+        const day = stamp.slice(8,10)
+        const time = stamp.slice(11,16)
+        return `${month}-${day}-${year} ${time}`
+    }
     return(
         <div className="post">
             <div className="post-user-info">
                 <h3 className="post-username">{post.user.user_name}</h3>
-                <h4 className="post-time">{post.created_at}</h4>
+                <h4 className="post-time">{handleTime(post.created_at)}</h4>
             </div>
             <div className="post-content">
                 {editing? <input onChange={(e) => setPostContent(e.target.value)} value={postContent}></input> :<p>{post.content}</p>}
