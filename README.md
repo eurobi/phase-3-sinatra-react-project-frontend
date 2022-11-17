@@ -5,7 +5,7 @@ this is the front-end of a Twitter-like post and comments app. It communicates w
 
 ## Installation
 1. run 'npm install'
-2. run 'spm start'
+2. run 'npm start'
 
 ## Usage
 Backend can be found at: https://github.com/eurobi/phase-3-sinatra-react-project
